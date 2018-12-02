@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock title %}
+
+{% block body  %}
+    
+    {% block header %}
+        {{ parent() }}
+    {% endblock header %}
+
+    <main id="home">
+        <h1 id="main_title_h1">Ne restez plus seul dans le trading !</h1>
+        <div class="toggle_down"><a href="#section_formules" id="toggle_down_link"><i class="fas fa-arrow-down fa-2x"></i></a></div>
+    </main>
+    <div id="title_formules">
+        <h1 id="title_formules_h1">Les formules d'abonnements</h1>
+    </div>
+
+    <section id="section_formules">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card text-center">
+                            <div class="title">
+                                <i class="fas fa-chess-rook"></i>
+                                <h2>Les Indices</h2>
+                                <div class="price">
+                                    <h4><sup><i class="fas fa-euro-sign"></i></sup>20</h4>
+                                    <h5>par mois</h5>
+                                    <hr>
+                                </div>
+                                <div class="option">
+                                    <ul>
+                                        <li><i class="fas fa-check"></i><strong> CAC 40</strong></li>
+                                        <li>L'indice parisien idéal pour débuter </li>
+                                        <li><i class="fas fa-check"></i><strong> DAX 30</strong></li>
+                                        <li>L'indice allemand pour + de volatilité </li>
+                                    </ul>
+                                </div>
+                                <a href="#">Commandez</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card text-center">
+                            <div class="title">
+                                <i class="fas fa-crown"></i>
+                                <h2>Pack Complet</h2>
+                                <div class="price">
+                                    <h4><sup><i class="fas fa-euro-sign"></i></sup>40</h4>
+                                    <h5>par mois</h5>
+                                    <hr>
+                                </div>
+                                <div class="option">
+                                    <ul>
+                                        <li><i class="fas fa-check"></i> Les Indices Européens</li>
+                                        <li><i class="fas fa-plus"></i></li>
+                                        <li><i class="fas fa-check"></i> Les Paires du Forex</li>
+                                    </ul>
+                                </div>
+                                <a href="#">Commandez</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card text-center">
+                            <div class="title">
+                                <i class="fas fa-chess-bishop"></i>
+                                <h2>Le Forex</h2>
+                                <div class="price">
+                                    <h4><sup><i class="fas fa-euro-sign"></i></sup>25</h4>
+                                    <h5>par mois</h5>
+                                    <hr>
+                                </div>
+                                <div class="option">
+                                    <ul>
+                                        <li><i class="fas fa-check"></i> EUR/USD</li>
+                                        <li><i class="fas fa-check"></i> GBP/USD</li>
+                                        <li><i class="fas fa-check"></i> USD/JPY</li>
+                                        <li><i class="fas fa-check"></i> USD/CAD</li>
+                                        
+                                    </ul>
+                                </div>
+                                <a href="#">Commandez</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock body %}

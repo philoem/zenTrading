@@ -1,12 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+    {% block head%}
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <meta charset="utf-8">
+        <title>{% block title %}Zen Trading{% endblock %}</title>
+        <meta name="description" content="Philippe Chamard développeur web création, refonte et optimisation de sites internet - Php Symfony Javascript Angular front-end back-end">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <meta property="og:title" content="Philippe Chamard développeur web dans les Yvelines en Ile-de-France" >
+        <meta property="og:description" content="Création, refonte et optimisation de sites internet" >
+        <meta property="og:type" content="website" >
+
+        <link rel="icon" type="image/x-icon" href="#" >
+        
+        {% block stylesheets %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" media="screen" href="./main.css" />
+        {% endblock stylesheets %}
+
     </head>
+    {% endblock head %}
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
+            {% block header %}
+            <div class="sidebar" id="sidebar">
+                <div class="toggle"></div>
+                <ul>
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#">A propos</a></li>
+                    <li><a href="#section_formules">Formules d'abonnements</a></li>
+                    <li><a href="#">Espace abonnés</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            {% endblock header %}
+        
+        
+        {% endblock %}
+        {% block javascripts %}
+            <script src="./js/toggling.js"></script>
+        {% endblock %}
     </body>
 </html>
