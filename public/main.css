@@ -4,7 +4,7 @@ body
     padding: 0;
     font-family: 'Roboto', sans-serif !important;
 }
-/* MAIN */
+/* HOMEPAGE */
 main
 {
     padding: 5px;
@@ -12,6 +12,7 @@ main
     height: 100vh;
     background: url('./img/alone.jpg');
     background-size: cover;
+    background-attachment: fixed;
     z-index: 1;
 }
 #main_title_h1
@@ -19,7 +20,40 @@ main
     font-family: 'Bowlby One SC', cursive;
     font-size: 48px;
     text-align: center;
+    letter-spacing: 1.5px;
     color: #fff;
+}
+#text_lead_homepage
+{
+    color: #fff;
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 25px;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+.block_quote
+{
+    position: absolute;
+    top: 40%;
+    right: 2%;
+    width: 30%;
+    height: 20%;
+    text-align: justify;
+}
+#quote_text 
+{
+    color: #fff;
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 26px;
+}
+#quote_author
+{
+    position: relative;
+    color: #fff;
+    float: right;
+    top: 25%;
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 20px;
 }
 .toggle_down
 {
@@ -36,11 +70,11 @@ main
     align-items: center;
     z-index: 5
 }
-#toggle_down_link
+#toggle_down_link_formules
 {
     color: #000
 }
-#toggle_down_link:hover
+#toggle_down_link_formules:hover
 {
     transform: scale(1.4);
     transition: .5s;
@@ -152,17 +186,43 @@ main
 /*  LES FORMULES  */
 #title_formules
 {
-    padding: 5px;
+    padding: 0px;
+    position: relative;
+    top: -70px;
     width: 100%;
     height: 5vh;
-    background: #012b2b;
+    background: rgb(7, 10, 14);
     z-index: 1;
 }
 #title_formules_h1
 {
     color: #fff;
     text-align: center;
-    margin-top: 40px;
+    margin-top: -20px;
+}
+.toggle_down_login
+{
+    position: absolute;
+    top: 196%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: rgb(255, 221, 0);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5
+}
+#toggle_down_link_login
+{
+    color: #000
+}
+#toggle_down_link_login:hover
+{
+    transform: scale(1.4);
+    transition: .5s;
 }
 /* Les cartes des 3 formules */
 section
@@ -172,7 +232,6 @@ section
     box-sizing: border-box;
     padding: 140px 0;
     background: rgb(7, 10, 14);
-    /*background: #012b2b;*/
     z-index: 1;
 }
 .card
@@ -315,4 +374,156 @@ h5
 .card a:hover
 {
     text-decoration: none;
+}
+/* ESPACE ABONNES LOGIN*/
+#login
+{
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 140px 0;
+    background: rgb(7, 10, 14);
+    z-index: 1;
+}
+.toggle_down_contact
+{
+    position: absolute;
+    top: 296%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: rgb(255, 221, 0);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5
+}
+#toggle_down_link_contact
+{
+    color: #000
+}
+#toggle_down_link_contact:hover
+{
+    transform: scale(1.4);
+    transition: .5s;
+}
+/* Formulaire de login */
+#container_login
+{
+    position: absolute;
+    top: 250%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 700px;
+    height: 350px;
+    background: rgba(103,58,183,0.7);
+}
+#container_login .form_content,
+#container_login .form_login
+{
+    position: relative;
+    width: 50%;
+    height: 350px;
+    float: left;
+    box-sizing: border-box;
+}
+#container_login .form_content
+{
+    padding: 40px 30px;
+    color: #fff;
+    letter-spacing: 1px;
+    text-align: justify;
+}
+#container_login .form_content a
+{
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background: #ff0057;
+    border-radius: 25px;
+    text-decoration: none;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+#container_login .form_login
+{
+    background: #fff;
+    height: 380px;
+    left: 2.5%;
+    top: -15px;
+    box-shadow: -20px 0 15px rgba(0,0,0,.2);
+    padding: 30px;
+}
+#container_login .form_login #title_h1_login
+{
+    color: #262626;
+}
+#container_login .form_login input
+{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    font-size: 15px;
+}
+#container_login .form_login input:hover,
+#container_login .form_login input:valid
+{
+    border: 2px solid #673ab7;
+}
+#container_login .form_login input[type="submit"]
+{
+    color: #fff;
+    background: #673ab7;
+    font-size: 16px;
+    transition: .4s;
+}
+#container_login .form_login input[type="submit"]:hover
+{
+    background: #ff0057;
+}
+#container_login .form_login #link_login_forgot_pw
+{
+    text-decoration: none;
+    font-weight: bold;
+
+}
+/* CONTACT */
+#contact
+{
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 140px 0;
+    background: rgb(7, 10, 14);
+    z-index: 1;
+}
+.toggle_up
+{
+    position: absolute;
+    top: 396%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: rgb(255, 221, 0);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5
+}
+#toggle_up_link_home
+{
+    color: #000
+}
+#toggle_up_link_home:hover
+{
+    transform: scale(1.4);
+    transition: .5s;
 }

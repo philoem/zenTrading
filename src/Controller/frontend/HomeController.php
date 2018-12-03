@@ -20,15 +20,7 @@ class HomeController extends Controller
         return $this->render('frontend/home.html.twig');
     }
 
-    /**
-     * 
-     * @Route("/formules", name="formules")
-     * 
-     */
-     public function choice(): Response
-     {
-         return $this->render('frontend/home.html.twig');
-     }
+    
 
 
 }

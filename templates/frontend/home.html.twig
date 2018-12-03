@@ -10,16 +10,23 @@
     {% block header %}
         {{ parent() }}
     {% endblock header %}
-
+<!-- HOMEPAGE -->
     <main id="home">
         <h1 id="main_title_h1">Ne restez plus seul dans le trading !</h1>
-        <div class="toggle_down"><a href="#section_formules" id="toggle_down_link"><i class="fas fa-arrow-down fa-2x"></i></a></div>
-    </main>
-    <div id="title_formules">
-        <h1 id="title_formules_h1">Les formules d'abonnements</h1>
-    </div>
+        <p class="lead" id="text_lead_homepage">Profitez des analyses techniques d'un professionnel</p>
 
+        <div class="block_quote">
+            <q id="quote_text">Le risque provient de ne pas savoir ce que l'on fait</q>
+            <p id="quote_author">Warren Buffet</p>
+        </div>
+
+        <div class="toggle_down"><a href="#section_formules" id="toggle_down_link_formules"><i class="fas fa-arrow-down fa-2x"></i></a></div>
+    </main>
+<!-- PAGE DES ABONNEMENTS -->
     <section id="section_formules">
+        <div id="title_formules">
+            <h1 id="title_formules_h1">Formules d'abonnements pour les analyses de marchés</h1>
+        </div>
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
@@ -82,7 +89,6 @@
                                         <li><i class="fas fa-check"></i> GBP/USD</li>
                                         <li><i class="fas fa-check"></i> USD/JPY</li>
                                         <li><i class="fas fa-check"></i> USD/CAD</li>
-                                        
                                     </ul>
                                 </div>
                                 <a href="#">Commandez</a>
@@ -93,5 +99,37 @@
             </div>
         </div>
     </section>
+    <div class="toggle_down_login"><a href="#login" id="toggle_down_link_login"><i class="fas fa-arrow-down fa-2x"></i></a></div>
+
+<!-- ESPACE ABONNES -->
+    <div id="login">
+        <h1>Espace abonnés</h1>
+    </div>
+    <div class="container" id="container_login">
+        <div class="form_content">
+            <h2>Conditions</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore doloribus quidem veniam sapiente ducimus soluta vitae molestiae neque, quo optio enim nulla expedita velit ex deserunt aliquam doloremque nihil reiciendis.</p>
+            <a href="#">En savoir plus...</a>
+        </div>
+        <div class="form_login">
+            <h1 id="title_h1_login">Connexion</h1>
+            <form action="">
+                <input type="text" name="" required placeholder="Votre pseudo">
+                <input type="password" name="" required placeholder="Votre mot de passe">
+                <input type="submit" name="" value="Se connecter">
+            </form>
+            <a href="#" id="link_login_forgot_pw">Mot de passe oublié</a>
+        </div>
+    </div>
+
+    <div class="toggle_down_contact"><a href="#contact" id="toggle_down_link_contact"><i class="fas fa-arrow-down fa-2x"></i></a></div>
+
+<!-- CONTACT -->
+    <div id="contact">
+        <h1>Contact</h1>
+    </div>
+
+    <div class="toggle_up"><a href="#home" id="toggle_up_link_home"><i class="fas fa-arrow-up fa-2x"></i></a></div>
+
 
 {% endblock body %}
