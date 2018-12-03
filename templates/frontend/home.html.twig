@@ -20,8 +20,16 @@
             <p id="quote_author">Warren Buffet</p>
         </div>
 
-        <div class="toggle_down"><a href="#section_formules" id="toggle_down_link_formules"><i class="fas fa-arrow-down fa-2x"></i></a></div>
+        <div class="toggle_down_about"><a href="#about" id="toggle_down_link_about"><i class="fas fa-arrow-down fa-2x"></i></a></div>
     </main>
+
+<!-- ABOUT -->
+    <div id="about">
+        <div id="title_about">
+            <h1 id="title_about_h1">A mon propos</h1>
+        </div>
+    </div> 
+    <div class="toggle_down_formules"><a href="#section_formules" id="toggle_down_link_formules"><i class="fas fa-arrow-down fa-2x"></i></a></div>  
 <!-- PAGE DES ABONNEMENTS -->
     <section id="section_formules">
         <div id="title_formules">
@@ -103,12 +111,14 @@
 
 <!-- ESPACE ABONNES -->
     <div id="login">
-        <h1>Espace abonnés</h1>
+        <div id="title_login">
+            <h1 id="title_login_h1">Espace abonnés</h1>
+        </div>
     </div>
     <div class="container" id="container_login">
         <div class="form_content">
-            <h2>Conditions</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore doloribus quidem veniam sapiente ducimus soluta vitae molestiae neque, quo optio enim nulla expedita velit ex deserunt aliquam doloremque nihil reiciendis.</p>
+            <h2>Avertissement sur les risques</h2>
+            <p>Trader le Forex et/ou les CFD’s implique un niveau de risque élevé, et peut ne pas être approprié car vous pouvez subir des pertes supérieures à votre dépôt. Vous devez être conscient et avoir une compréhension complète de tous les risques associés au marché des changes et au trading de produits dérivés. L'équipe "ZenTrading" peut être amenée à produire des commentaires d’ordre général qui ne constituent pas des conseils d'investissement et ne doivent pas être interprétés comme tels. Vous devez consulter un conseiller en investissement si vous estimez ne pas avoir les compétences nécessaires à choisir un produit d'investissement vous correspondant. L'équipe "ZenTrading" décline toutes responsabilités pour les erreurs, inexactitudes ou omissions et ne garantit pas l’exactitude et /ou le caractère complet des informations, textes, graphiques, liens ou autres éléments contenus dans cette documentation.</p>
             <a href="#">En savoir plus...</a>
         </div>
         <div class="form_login">
@@ -126,7 +136,31 @@
 
 <!-- CONTACT -->
     <div id="contact">
-        <h1>Contact</h1>
+        <div id="title_contact">
+            <h1 id="title_contact_h1">Contact</h1>
+        </div>
+    </div>
+    <div class="box">
+        <h2 id="form_contact_title">Laissez-moi un message</h2>
+        <form action="">
+            <div>
+                <input type="text" name="" required="">
+                <label for="name">Votre Nom</label>
+            </div>
+            <div>
+                <input type="email" name="" required="">
+                <label for="email">Votre Email</label>
+            </div>
+            <div>
+                <input type="text" name="" required="">
+                <label for="name">Sujet</label>
+            </div>
+            <div>
+                <textarea name="" cols="30" rows="10" required=""></textarea>
+                <label for="">Votre Message</label>
+            </div>
+            <input type="submit" value="Envoyer votre message">
+        </form>
     </div>
 
     <div class="toggle_up"><a href="#home" id="toggle_up_link_home"><i class="fas fa-arrow-up fa-2x"></i></a></div>

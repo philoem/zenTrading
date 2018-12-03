@@ -55,7 +55,7 @@ main
     font-family: 'Bowlby One SC', cursive;
     font-size: 20px;
 }
-.toggle_down
+.toggle_down_about
 {
     position: absolute;
     top: 97%;
@@ -70,11 +70,11 @@ main
     align-items: center;
     z-index: 5
 }
-#toggle_down_link_formules
+#toggle_down_link_about
 {
     color: #000
 }
-#toggle_down_link_formules:hover
+#toggle_down_link_about:hover
 {
     transform: scale(1.4);
     transition: .5s;
@@ -183,6 +183,58 @@ main
     transform-origin: left;
     transition: transform 0.6s;
 }
+/*  ABOUT */
+#about
+{
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 140px 0;
+    background: rgb(7, 10, 14);
+    z-index: 1;
+}
+#title_about
+{
+    padding: 0px;
+    position: relative;
+    top: -70px;
+    width: 100%;
+    height: 5vh;
+    background: rgb(7, 10, 14);
+    z-index: 1;
+}
+#title_about_h1
+{
+    color: #fff;
+    text-align: center;
+    margin-top: -20px;
+    font-family: 'Bowlby One SC', cursive;
+    letter-spacing: 1px;
+}
+.toggle_down_formules
+{
+    position: absolute;
+    top: 197%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: rgb(255, 221, 0);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5
+}
+#toggle_down_link_formules
+{
+    color: #000
+}
+#toggle_down_link_formules:hover
+{
+    transform: scale(1.4);
+    transition: .5s;
+}
 /*  LES FORMULES  */
 #title_formules
 {
@@ -199,11 +251,13 @@ main
     color: #fff;
     text-align: center;
     margin-top: -20px;
+    font-family: 'Bowlby One SC', cursive;
+    letter-spacing: 1px;
 }
 .toggle_down_login
 {
     position: absolute;
-    top: 196%;
+    top: 296%;
     transform: translateY(-50%);
     right: 0;
     width: 60px;
@@ -384,11 +438,31 @@ h5
     padding: 140px 0;
     background: rgb(7, 10, 14);
     z-index: 1;
+    background: url('./img/alone.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+#title_login
+{
+    padding: 0px;
+    position: relative;
+    top: -70px;
+    width: 100%;
+    height: 5vh;
+    z-index: 1;
+}
+#title_login_h1
+{
+    color: #fff;
+    text-align: center;
+    margin-top: -20px;
+    font-family: 'Bowlby One SC', cursive;
+    letter-spacing: 1px;
 }
 .toggle_down_contact
 {
     position: absolute;
-    top: 296%;
+    top: 396%;
     transform: translateY(-50%);
     right: 0;
     width: 60px;
@@ -413,11 +487,11 @@ h5
 #container_login
 {
     position: absolute;
-    top: 250%;
+    top: 350%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 700px;
-    height: 350px;
+    width: 900px;
+    height: 450px;
     background: rgba(103,58,183,0.7);
 }
 #container_login .form_content,
@@ -425,15 +499,14 @@ h5
 {
     position: relative;
     width: 50%;
-    height: 350px;
+    height: 550px;
     float: left;
     box-sizing: border-box;
 }
 #container_login .form_content
 {
-    padding: 40px 30px;
+    padding: -5px 30px;
     color: #fff;
-    letter-spacing: 1px;
     text-align: justify;
 }
 #container_login .form_content a
@@ -449,11 +522,11 @@ h5
 #container_login .form_login
 {
     background: #fff;
-    height: 380px;
+    height: 480px;
     left: 2.5%;
     top: -15px;
     box-shadow: -20px 0 15px rgba(0,0,0,.2);
-    padding: 30px;
+    padding: 50px;
 }
 #container_login .form_login #title_h1_login
 {
@@ -503,10 +576,114 @@ h5
     background: rgb(7, 10, 14);
     z-index: 1;
 }
+#title_contact
+{
+    padding: 0px;
+    position: relative;
+    top: -70px;
+    width: 100%;
+    height: 5vh;
+    background: rgb(7, 10, 14);
+    z-index: 1;
+}
+#title_contact_h1
+{
+    color: #fff;
+    text-align: center;
+    margin-top: -20px;
+    font-family: 'Bowlby One SC', cursive;
+    letter-spacing: 1px;
+}
+/* Formulaire de contact */
+.box
+{
+    position: absolute;
+    top: 450%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    background: #fff;
+    padding: 40px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+.box #form_contact_title
+{
+    margin: 0 0 40px;
+    padding: 0;
+    color: #f7497d;
+    text-transform: uppercase;
+}
+.box input
+{
+    padding: 10px 0;
+    margin-bottom: 30px;
+}
+.box textarea
+{
+    height: 80px;
+    padding: 10px 0;
+    margin-bottom: 40px;
+}
+.box input,
+.box textarea
+{
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #999;
+}
+.box textarea
+{
+    margin-bottom: 20px;
+}
+.box input[type="submit"]
+{
+    border-bottom: none;
+    cursor: pointer;
+    background: #f7497d;
+    color: #fff;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+.box form div
+{
+    position: relative;
+}
+.box form div label
+{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: #999;
+    transition: .5s;
+    pointer-events: none;
+}
+.box input:focus ~ label,
+.box textarea:focus ~ label,
+.box input:valid ~ label,
+.box textarea:valid ~ label
+{
+    top: -12px;
+    left: 0;
+    color: #f7497d;
+    font-size: 12px;
+    font-weight: bold;
+}
+.box input:focus,
+.box textarea:focus,
+.box input:valid,
+.box textarea:valid
+{
+    border-bottom: 2px solid #f7497d;
+}
 .toggle_up
 {
     position: absolute;
-    top: 396%;
+    top: 496%;
     transform: translateY(-50%);
     right: 0;
     width: 60px;
