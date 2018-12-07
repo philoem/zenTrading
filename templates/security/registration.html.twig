@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}
+    Inscription - {{ parent() }}
+{% endblock title %}
+{% form_theme form_registration 'bootstrap_4_layout.html.twig' %}
+{% block body  %}
+    
+    {% block header %}
+        {{ parent() }}
+    {% endblock header %}
+    <div id="registration">
+        <div class="container">
+            <h1 class="text-center" id="title_h1_registration">Inscription</h1>
+            <div class="form_registration">
+                {{ form_start(form_registration) }}
+                {{ form_errors(form_registration) }}
+                <form method="POST">
+                    <div class="row">
+                        <div class="form-group col-sm-8 col-lg-8" id="form_shadow_register">
+                            <div class="col-sm-12 col-lg-12 ">
+                                                                
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col col-sm-6">
+                                            {{ form_row(form_registration.firstname, {'label': 'Votre Prénom :'}) }}
+                                        </div>
+                                        <div class="col col-sm-6">
+                                            {{ form_row(form_registration.name, {'label': 'Votre Nom :'}) }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-sm-6">
+                                            {{ form_row(form_registration.username, {'label': 'Votre Pseudo :'}) }}
+                                        </div>
+                                        <div class="col col-sm-6">
+                                            {{ form_row(form_registration.mail, {'label': 'Votre Mail :'}) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        {{ form_row(form_registration.locations, {'label': 'Votre Adresse :'}) }}
+                                    </div>
+                                </div>
+        
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col col-sm-6">
+                                            {{ form_row(form_registration.password, {'label': 'Tapez votre mot de passe :'}) }}
+                                            
+                                        </div>
+                                        <div class="col col-sm-6">
+                                            {{ form_row(form_registration.confirm_password, {'label': 'Confirmez votre mot de passe :', 'attr': {'placeholder': 'Retapez votre mot de passe'}}) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg" id="btn_submit_registration"><span style="color: white" class="fas fa-check "></span> Validez votre inscription </button>
+        
+                                
+                                {{ form_end(form_registration) }}
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </form>
+                {# Message de confirmation d'inscription #}
+                <div class="container">
+                    <div class="row justify-content-center">
+                        {% for message in app.flashes('notice') %}
+                            <div class="flash-notice">
+                                <h1>{{ message }}</h1>
+                                <div class="row justify-content-center">
+                                    <a href="{{ path('security_login') }}" title="Connexion" id="return_home">Allez vous connecter</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+{% endblock %}

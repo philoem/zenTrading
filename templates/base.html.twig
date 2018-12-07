@@ -18,8 +18,9 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC" rel="stylesheet">
-
-        <link rel="stylesheet" type="text/css" media="screen" href="./main.css" />
+        <link href="https://fonts.googleapis.com/css?family=Oswald:500" rel="stylesheet">
+       
+        <link href="{{ asset('main.css') }}" rel="stylesheet" />
         {% endblock stylesheets %}
 
     </head>
@@ -30,11 +31,21 @@
             <div class="sidebar" id="sidebar">
                 <div class="toggle"></div>
                 <ul>
-                    <li><a href="#home">Accueil</a></li>
-                    <li><a href="#about">A propos</a></li>
-                    <li><a href="#section_formules">Formules d'abonnements</a></li>
-                    <li><a href="#login">Espace abonnés</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="{{ path('home') }}#home">Accueil</a></li>
+                    <li><a href="{{ path('about') }}#about">A propos</a></li>
+                    {% if app.user %}
+                    <li><a href="{{ path('suscriber') }}">Mon espace abonné</a></li>
+                    {% endif %}
+                    <li><a href="{{ path('section_formules') }}#section_formules">Formules d'abonnements</a></li>
+                    {% if not app.user %}
+                        <li><a href="{{ path('security_registration') }}">Inscription</a></li>
+                    {% endif %}
+                    {% if not app.user%}
+                        <li><a href="{{ path('security_login') }}#login">Connexion</a></li>
+                    {% else %}
+                        <li><a href="{{ path('security_logout') }}#login">Déconnexion</a></li>
+                    {% endif %}
+                    <li><a href="{{ path('contact') }}#contact">Contact</a></li>
                 </ul>
             </div>
             {% endblock header %}
@@ -42,7 +53,8 @@
         
         {% endblock %}
         {% block javascripts %}
-            <script src="./js/toggling.js"></script>
+            
+            <script src="{{ asset('js/toggling.js') }}"></script>
         {% endblock %}
     </body>
 </html>

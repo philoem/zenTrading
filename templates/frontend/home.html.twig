@@ -13,7 +13,13 @@
 <!-- HOMEPAGE -->
     <main id="home">
         <h1 id="main_title_h1">Ne restez plus seul dans le trading !</h1>
-        <p class="lead" id="text_lead_homepage">Profitez des analyses techniques d'un professionnel</p>
+        <p class="lead" id="text_lead_homepage">Apprenez les techniques des professionnels</p>
+
+        <div class="center">
+            <div class="text textblock1"><span>School</span></div>
+            <div class="text textblock2"><span>of</span></div>
+            <div class="text textblock3"><span>Trading</span></div>
+        </div>
 
         <div class="block_quote">
             <q id="quote_text">Le risque provient de ne pas savoir ce que l'on fait</q>
@@ -109,26 +115,33 @@
     </section>
     <div class="toggle_down_login"><a href="#login" id="toggle_down_link_login"><i class="fas fa-arrow-down fa-2x"></i></a></div>
 
-<!-- ESPACE ABONNES -->
-    <div id="login">
+<!-- ESPACE LOGIN -->
+<div id="login">
         <div id="title_login">
             <h1 id="title_login_h1">Espace abonnés</h1>
         </div>
-    </div>
-    <div class="container" id="container_login">
-        <div class="form_content">
-            <h2>Avertissement sur les risques</h2>
-            <p>Trader le Forex et/ou les CFD’s implique un niveau de risque élevé, et peut ne pas être approprié car vous pouvez subir des pertes supérieures à votre dépôt. Vous devez être conscient et avoir une compréhension complète de tous les risques associés au marché des changes et au trading de produits dérivés. L'équipe "ZenTrading" peut être amenée à produire des commentaires d’ordre général qui ne constituent pas des conseils d'investissement et ne doivent pas être interprétés comme tels. Vous devez consulter un conseiller en investissement si vous estimez ne pas avoir les compétences nécessaires à choisir un produit d'investissement vous correspondant. L'équipe "ZenTrading" décline toutes responsabilités pour les erreurs, inexactitudes ou omissions et ne garantit pas l’exactitude et /ou le caractère complet des informations, textes, graphiques, liens ou autres éléments contenus dans cette documentation.</p>
-            <a href="#">En savoir plus...</a>
-        </div>
-        <div class="form_login">
-            <h1 id="title_h1_login">Connexion</h1>
-            <form action="">
-                <input type="text" name="" required placeholder="Votre pseudo">
-                <input type="password" name="" required placeholder="Votre mot de passe">
-                <input type="submit" name="" value="Se connecter">
-            </form>
-            <a href="#" id="link_login_forgot_pw">Mot de passe oublié</a>
+        <div class="container" id="container_login">
+            <div class="form_content">
+                <h2>Avertissement sur les risques</h2>
+                <p>Trader le Forex et/ou les CFD’s implique un niveau de risque élevé, et peut ne pas être approprié car vous pouvez subir des pertes supérieures à votre dépôt. Vous devez être conscient et avoir une compréhension complète de tous les risques associés au marché des changes et au trading de produits dérivés. L'équipe "<strong>School Of Trading</strong>" peut être amenée à produire des commentaires d’ordre général qui ne constituent pas des conseils d'investissement et ne doivent pas être interprétés comme tels. Vous devez consulter un conseiller en investissement si vous estimez ne pas avoir les compétences nécessaires à choisir un produit d'investissement vous correspondant. L'équipe "<strong>School Of Trading</strong>" décline toutes responsabilités pour les erreurs, inexactitudes ou omissions et ne garantit pas l’exactitude et /ou le caractère complet des informations, textes, graphiques, liens ou autres éléments contenus dans cette documentation.</p>
+                <a href="#">En savoir plus...</a>
+            </div>
+            <div class="form_login">
+                <h1 id="title_h1_login">Connexion</h1>
+               
+                <form action="{{ path('security_login') }}" method="POST">
+                    <input type="text" placeholder="Votre Pseudo" name="_username" required>
+                    <input type="password" placeholder="Votre Mot De Passe" name="_password" required>
+                    <input type="submit" name="submit" value="Se connecter">
+                </form>
+                <a href="#" id="link_login_forgot_pw">Mot de passe oublié</a>
+                <div class="remember" >
+                    <label for="remember_me" id="remember_me_label">Se souvenir de moi</label>
+                    <input type="checkbox"  name="_remember_me" id="remember_me" />
+                </div>
+                
+            </div>
+            
         </div>
     </div>
 
@@ -137,26 +150,26 @@
 <!-- CONTACT -->
     <div id="contact">
         <div id="title_contact">
-            <h1 id="title_contact_h1">Contact</h1>
+            <h1 id="title_contact_h1"> Contact</h1>
         </div>
     </div>
     <div class="box">
         <h2 id="form_contact_title">Laissez-moi un message</h2>
-        <form action="">
+        <form action="" method="post">
             <div>
-                <input type="text" name="" required="">
+                <input type="text" name="name" required>
                 <label for="name">Votre Nom</label>
             </div>
             <div>
-                <input type="email" name="" required="">
+                <input type="email" name="email" required>
                 <label for="email">Votre Email</label>
             </div>
             <div>
-                <input type="text" name="" required="">
+                <input type="text" name="subject" required>
                 <label for="name">Sujet</label>
             </div>
             <div>
-                <textarea name="" cols="30" rows="10" required=""></textarea>
+                <textarea name="text" cols="30" rows="10" required></textarea>
                 <label for="">Votre Message</label>
             </div>
             <input type="submit" value="Envoyer votre message">

@@ -1,6 +1,6 @@
-home:
-    path: /
-    controller: App\Controller\frontend\HomeController::index
+#home:
+#    path: /
+#    controller: App\Controller\frontend\HomeController::index
 
 #index:
 #    path: /

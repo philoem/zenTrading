@@ -2,12 +2,31 @@ security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         in_memory: { memory: ~ }
+        projet:
+            entity: { class: App\Entity\Users, property: username }
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+            pattern: ^/
+            #http_basic: ~
+            provider: projet
             anonymous: true
+            form_login:
+                login_path: security_login
+                check_path: security_login
+                #username_parameter: form_login[username]
+                #password_parameter: form_login[password]
+            logout:
+                path:       security_logout
+                target:     home
+            
+            # Checkbox "Se souvenir de moi" du formulaire login
+            remember_me:
+                secret:   '%kernel.secret%'
+                lifetime: 604800 # 1 semaine en secondes
+                path:     /
 
             # activate different ways to authenticate
 
@@ -16,9 +35,22 @@ security:
 
             # form_login: true
             # https://symfony.com/doc/current/security/form_login_setup.html
+    encoders:
+        App\Entity\Users: 
+            algorithm: bcrypt  
+            cost: 12
+    role_hierarchy:
+        ROLE_USER: ROLE_USER
+        ROLE_ADMIN: [ROLE_ADMIN, ROLE_USER]
+        ROLE_SUPER_ADMIN: [ROLE_SUPER_ADMIN, ROLE_ADMIN, ROLE_USER]
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
+    
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/registration, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/members, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/suscriber, roles: ROLE_ADMIN }
+        
+        
