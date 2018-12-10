@@ -11,41 +11,41 @@
     {% endblock header %}
     
     <div id="suscriber_page">
-        <h1 id="suscriber_title_h1">Bienvenu {{ app.user.username | title }}</h1>
+        <h1 id="suscriber_title_h1">Bienvenu "{{ app.user.username | title }}"</h1>
         <div class="suscriber">
             <h2 id="form_suscriber_title">Modifier votre profil</h2>
-            <form action="{{ path('suscriber') }}" method="POST">
-                <div>
-                    {% set userLastname = app.user.name|capitalize %}
-                    <input type="text" name="name" required>
-                    <label for="name">{{userLastname}}</label>
-                </div>
-                <div>
+            
+                {{ form_start(form_suscriber) }}
+                    {% set userLastname = app.user.name %}
+                    {{ form_row(form_suscriber.name, {'attr': {'placeholder': userLastname }}) }}
                     {% set username = app.user.username|capitalize %}
-                    <input type="text" name="username" required>
-                    <label for="username">{{username}}</label>
-                </div>
-                <div>
+                    {{ form_row(form_suscriber.username, {'attr': {'placeholder': username }}) }}
                     {% set mail = app.user.mail %}
-                    <input type="email" name="email" required>
-                    <label for="email">{{mail}}</label>
-                </div>
-                <div>
-                    {% set location = app.user.locations %}
-                    <input type="text" name="locations" required>
-                    <label for="locations">{{location}}</label>
-                </div>
-                <div>
-                    <input type="password" name="password" required>
-                    <label for="password">Votre Nouveau Mot De Passe</label>
-                </div>
-                <div>
-                    <input type="password" name="confirm_password" required>
-                    <label for="confirm_password">Confirnez Votre Mot De Passe</label>
-                </div>
+                    {{ form_row(form_suscriber.mail, {'attr': {'placeholder': mail }}) }}
+                    {% set location = app.user.locations|capitalize %}
+                    {{ form_row(form_suscriber.locations, {'attr': {'placeholder': location }}) }}
+                    {{ form_row(form_suscriber.password.first) }}
+                    {{ form_row(form_suscriber.password.second) }}
+                
+             
                 <input type="submit" value="Enregistrez vos modifications">
-            </form>
+                {{ form_end(form_suscriber) }}
+            
         </div>
+        {# Message de confirmation de modification du profil #}
+        <div class="container" id="app_flashes_admin">
+            <div class="row justify-content-center">
+                {% for message in app.flashes('notice') %}
+                <div class="flash-notice">
+                    <h1>{{ message }}</h1>
+                    <div class="row justify-content-center">
+                        <a href="{{ path('home') }}" title="Connexion" id="return_home">Retour à l'accueil</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
     </div>
 
 {% endblock %}

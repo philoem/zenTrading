@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Dashboard - {{ parent() }}
+{% endblock title %}
+
+{% block body  %}
+    
+    {% block header %}
+        {{ parent() }}
+    {% endblock header %}
+
+    <div class="container">  
+        <h1>Liste de mes étudiants</h1>
+        <hr>
+    
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Prénom</th>
+                        <th>Nom</th>
+                        <th>Pseudo</th>
+                        <th>Email</th>
+                        <th>Adresse</th>
+                        <th>Roles</th>
+                        <th>Membre depuis</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.firstname|capitalize }}</td>
+                <td>{{ user.name|capitalize }}</td>
+                <td>{{ user.username|capitalize }}</td>
+                <td>{{ user.mail }}</td>
+                <td>{{ user.locations }}</td>
+                <td>{{ user.roles ? user.roles|join(', ') : '' }}</td>
+                <td>{{ user.createdAt ? user.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('users_show', {'id': user.id}) }}" title="Cliquez sur l'icône pour voir plus de détails de l'élève"><i class="far fa-eye fa-2x"></i></a>
+                    <a href="{{ path('users_edit', {'id': user.id}) }}" title="Cliquez sur l'icône pour supprimer l'élève de la base de données"><i style="color:red;" class="fas fa-times fa-2x"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('users_new') }}">Créer un nouveau membre</a>
+{% endblock %}

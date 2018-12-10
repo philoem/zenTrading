@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Dashboard - Création - {{ parent() }}
+{% endblock title %}
+
+{% block body  %}
+    
+    {% block header %}
+        {{ parent() }}
+    {% endblock header %}
+<div class="container">
+    <h1>Création d'un nouveau membre étudiant</h1>
+    <hr>
+
+    {{ include('users/_form.html.twig') }}
+
+    <a href="{{ path('users_index') }}">back to list</a>
+</div>
+{% endblock %}

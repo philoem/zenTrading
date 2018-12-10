@@ -50,7 +50,8 @@ security:
     access_control:
         - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/registration, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/members, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/blog, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/suscriber, roles: ROLE_ADMIN }
+        - { path: ^/users, roles: ROLE_SUPER_ADMIN }
         
         

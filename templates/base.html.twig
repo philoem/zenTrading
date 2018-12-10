@@ -30,11 +30,18 @@
             {% block header %}
             <div class="sidebar" id="sidebar">
                 <div class="toggle"></div>
+                <div class="col">
+                    <p class="title_sidebar">School</p>
+                    <p class="title_sidebar">Of</p>
+                    <p class="title_sidebar">Trading</p>
+                </div>
+                <hr>
                 <ul>
                     <li><a href="{{ path('home') }}#home">Accueil</a></li>
                     <li><a href="{{ path('about') }}#about">A propos</a></li>
+                    <li><a href="{{ path('blog') }}">Go to School</a></li>
                     {% if app.user %}
-                    <li><a href="{{ path('suscriber') }}">Mon espace abonné</a></li>
+                    <li><a href="{{ path('suscriber') }}">Mon profil</a></li>
                     {% endif %}
                     <li><a href="{{ path('section_formules') }}#section_formules">Formules d'abonnements</a></li>
                     {% if not app.user %}

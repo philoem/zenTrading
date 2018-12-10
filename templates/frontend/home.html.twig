@@ -15,11 +15,19 @@
         <h1 id="main_title_h1">Ne restez plus seul dans le trading !</h1>
         <p class="lead" id="text_lead_homepage">Apprenez les techniques des professionnels</p>
 
+        {% if not app.user %}
         <div class="center">
             <div class="text textblock1"><span>School</span></div>
             <div class="text textblock2"><span>of</span></div>
             <div class="text textblock3"><span>Trading</span></div>
         </div>
+        {% else %}
+        <div class="center">
+            <div class="text textblock1"><span>Bienvenu</span></div>
+            <div class="text textblock2"><span>à toi</span></div>
+            <div class="text textblock3"><span>{{ app.user.username | title }}</span></div>
+        </div>
+        {% endif %}
 
         <div class="block_quote">
             <q id="quote_text">Le risque provient de ne pas savoir ce que l'on fait</q>
@@ -118,7 +126,12 @@
 <!-- ESPACE LOGIN -->
 <div id="login">
         <div id="title_login">
+            {% if not app.user %}
             <h1 id="title_login_h1">Espace abonnés</h1>
+            {% else %}
+            <h1 id="title_login_h1">Bienvenu "{{ app.user.username | title }}"</h1>
+            <h4 class="text-center" ><a href="{{ path('blog') }}" id="title_login_h4">Direction les cours ?? Par ici <i class="fas fa-angle-double-right fa-lg"></i></a></h4>
+            {% endif %}
         </div>
         <div class="container" id="container_login">
             <div class="form_content">
@@ -128,18 +141,18 @@
             </div>
             <div class="form_login">
                 <h1 id="title_h1_login">Connexion</h1>
-               
+              
                 <form action="{{ path('security_login') }}" method="POST">
                     <input type="text" placeholder="Votre Pseudo" name="_username" required>
                     <input type="password" placeholder="Votre Mot De Passe" name="_password" required>
                     <input type="submit" name="submit" value="Se connecter">
                 </form>
+                
                 <a href="#" id="link_login_forgot_pw">Mot de passe oublié</a>
                 <div class="remember" >
                     <label for="remember_me" id="remember_me_label">Se souvenir de moi</label>
                     <input type="checkbox"  name="_remember_me" id="remember_me" />
                 </div>
-                
             </div>
             
         </div>

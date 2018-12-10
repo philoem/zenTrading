@@ -19,11 +19,10 @@ class AdminController extends AbstractController
     {
         $user = $this->getUser();
         
-        //$user = new Users();
-        $form_suscriber = $this->createForm(AdminType::class, $user);
-        $form_suscriber->handleRequest($request);
+        $form = $this->createForm(AdminType::class, $user);
+        $form->handleRequest($request);
 
-        if($form_suscriber->isSubmitted() && $form_suscriber->isValid()) {
+        if($form->isSubmitted() && $form->isValid()) {
             
             $hash = $encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($hash);
@@ -31,11 +30,19 @@ class AdminController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->flush();
 
+            /* Ici affichage d'un message confirmant l'enregistrement du message */
+            $this->addFlash(
+                'notice',
+                'Sauvegarde effectuée !'
+            );
+
             return $this->render('security_login');
         }
+
+        $form_suscriber = $form->createView();
         
         return $this->render('backend/suscriber.html.twig', [
-            'form_suscriber' => $form_suscriber->createView(),
+            'form_suscriber' => $form_suscriber,
             'user'           => $user
         ]);
     }

@@ -238,6 +238,15 @@ main
     transform-origin: left;
     transition: transform 0.6s;
 }
+/* Titre dans la sidebar */
+.title_sidebar
+{
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: -1px;
+    font-size: 30px;
+}
 /*  ABOUT */
 #about
 {
@@ -490,12 +499,14 @@ h5
 #registration
 {
     width: 100%;
-    height: 100vh;
+    height: 105vh;
     box-sizing: border-box;
     padding: 140px 0;
     background: rgb(7, 10, 14);
     z-index: 1;
     background: url('./img/alone.jpg');
+    background-size: cover;
+    filter: blur(4px);
     background-size: cover;
     background-attachment: fixed;
 }
@@ -508,6 +519,8 @@ h5
 }
 #title_h1_registration
 {
+    position: relative;
+    top: -90vh;
     color: #fff;
     text-align: center;
     margin-top: -20px;
@@ -584,7 +597,18 @@ h5
     transition: .5s;
 }
 /* Formulaire de login */
-
+#title_login_h4
+{
+    color: #fff;
+    text-align: center;
+    margin-top: -20px;
+    font-family: 'Bowlby One SC', cursive;
+    letter-spacing: 1px;
+}
+#title_login_h4:hover
+{
+    text-decoration: none;
+}
 #container_login
 {
     position: absolute;
@@ -869,14 +893,7 @@ h5
     padding: 10px 0;
     margin-bottom: 30px;
 }
-.suscriber textarea
-{
-    height: 80px;
-    padding: 10px 0;
-    margin-bottom: 40px;
-}
-.suscriber input,
-.suscriber textarea
+.suscriber input
 {
     width: 100%;
     box-sizing: border-box;
@@ -884,10 +901,6 @@ h5
     outline: none;
     border: none;
     border-bottom: 2px solid #999;
-}
-.suscriber textarea
-{
-    margin-bottom: 20px;
 }
 .suscriber input[type="submit"]
 {
@@ -906,16 +919,14 @@ h5
 .suscriber form div label
 {
     position: absolute;
-    top: 10px;
+    top: -10px;
     left: 0;
     color: #999;
     transition: .5s;
     pointer-events: none;
 }
 .suscriber input:focus ~ label,
-.suscriber textarea:focus ~ label,
-.suscriber input:valid ~ label,
-.suscriber textarea:valid ~ label
+.suscriber input:valid ~ label
 {
     top: -12px;
     left: 0;
@@ -924,9 +935,17 @@ h5
     font-weight: bold;
 }
 .suscriber input:focus,
-.suscriber textarea:focus,
-.suscriber input:valid,
-.suscriber textarea:valid
+.suscriber input:valid
 {
     border-bottom: 2px solid #f7497d;
+}
+/* BLOG */
+#title_blog_h1
+{
+    font-weight: bold;
+    border-bottom: 1px solid rgb(56, 54, 54);
+}
+.nav_blog
+{
+    padding-bottom: 10px;
 }

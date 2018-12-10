@@ -16,13 +16,13 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class SecurityController extends AbstractController
 {
     /**
-    * @Route("/members", name="security_login")
+    * @Route("/home", name="security_login", defaults={"_fragment" = "login"})
     */
     public function login(Request $request, AuthenticationUtils $authenticationUtils)
     {
         
-        //$error = $authenticationUtils->getLastAuthenticationError();
-        //$lastUsername = $authenticationUtils->getLastUsername();
+        $error = $authenticationUtils->getLastAuthenticationError();
+        $lastUsername = $authenticationUtils->getLastUsername();
         
         $user = new Users();
         $form_login = $this->createForm(LoginType::class, $user);
@@ -31,11 +31,15 @@ class SecurityController extends AbstractController
 
         if($form_login->isSubmitted() && $form_login->isValid()){
             
-            return $this->render('backend/suscriber.html.twig');
+            return $this->redirectToRoute('home', [
+                '_fragment' => 'login'
+            ]);
         } 
         
-        return $this->render('frontend/home.html.twig', [
-            'form_login' => $form_login->createView()
+        return $this->redirectToRoute('home', [
+            'last_username'     => $lastUsername,
+            'error'             => $error,
+            '_fragment'         => 'login'
         ]);
     }
     
@@ -59,7 +63,9 @@ class SecurityController extends AbstractController
             $manager->persist($user);
             $manager->flush();
 
-            return $this->render('security_login');
+            return $this->redirectToRoute('security_login', [
+                '_fragment' => 'login'
+            ]);
         }
 
         return $this->render('security/registration.html.twig', [

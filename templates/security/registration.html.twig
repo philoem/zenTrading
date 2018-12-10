@@ -10,7 +10,7 @@
     {% block header %}
         {{ parent() }}
     {% endblock header %}
-    <div id="registration">
+    <div id="registration"></div>
         <div class="container">
             <h1 class="text-center" id="title_h1_registration">Inscription</h1>
             <div class="form_registration">
@@ -48,11 +48,11 @@
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col col-sm-6">
-                                            {{ form_row(form_registration.password, {'label': 'Tapez votre mot de passe :'}) }}
+                                            {{ form_row(form_registration.password.first, {'label': 'Tapez votre mot de passe :'}) }}
                                             
                                         </div>
                                         <div class="col col-sm-6">
-                                            {{ form_row(form_registration.confirm_password, {'label': 'Confirmez votre mot de passe :', 'attr': {'placeholder': 'Retapez votre mot de passe'}}) }}
+                                            {{ form_row(form_registration.password.second, {'label': 'Confirmez votre mot de passe :', 'attr': {'placeholder': 'Retapez votre mot de passe'}}) }}
                                         </div>
                                     </div>
                                 </div>
@@ -82,6 +82,6 @@
             </div>
             
         </div>
-    </div>
+    
 
 {% endblock %}

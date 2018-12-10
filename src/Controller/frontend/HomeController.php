@@ -37,24 +37,8 @@ class HomeController extends Controller
     {
         return $this->render('frontend/home.html.twig');
     }
-    /**
-    * 
-    * @Route("/link_direct_login", name="link_direct_login")
-    * 
-    */
-    public function link_direct_login(): Response
-    {
-        return $this->render('frontend/home.html.twig');
-    }
-    /**
-     * 
-     * @Route("/members", name="members")
-     * 
-     */
-    public function loginAction(): Response
-    {
-        return $this->render('login/login.html.twig');
-    }
+   
+    
     /**
     * 
     * @Route("/contact", name="contact")
@@ -65,16 +49,7 @@ class HomeController extends Controller
         return $this->render('frontend/home.html.twig');
     }
 
-    /**
-     * 
-     * @Route("/suscriber", name="suscriber")
-     * 
-     */
-     public function suscriber()
-     {
-         
-         return $this->render('backend/suscriber.html.twig');
-     }
+    
 
     
 
