@@ -571,6 +571,23 @@ h5
     font-family: 'Bowlby One SC', cursive;
     letter-spacing: 1px;
 }
+#link_dashboard
+{
+    position: absolute;
+    top: 250%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    font-family: 'Bowlby One SC', cursive;
+    letter-spacing: 1px;
+    color: #fff;
+}
+#link_dashboard:hover
+{
+    text-decoration: none;
+    color: #c9ff4c;
+    transition: .5s;
+}
 /* Carré de navigation vers page contact */
 .toggle_down_contact
 {

@@ -130,7 +130,10 @@
             <h1 id="title_login_h1">Espace abonnés</h1>
             {% else %}
             <h1 id="title_login_h1">Bienvenu "{{ app.user.username | title }}"</h1>
-            <h4 class="text-center" ><a href="{{ path('blog') }}" id="title_login_h4">Direction les cours ?? Par ici <i class="fas fa-angle-double-right fa-lg"></i></a></h4>
+            <h4 class="text-center" ><a href="{{ path('blog') }}" id="title_login_h4">Direction les cours, par ici <i class="fas fa-angle-double-right fa-lg"></i></a></h4>
+            {% endif %}
+            {% if is_granted('ROLE_SUPER_ADMIN') %}
+                <a href="{{ path('users_index') }}" id="link_dashboard">Direction mon dashboard <i class="fas fa-angle-double-right fa-lg"></i></a>
             {% endif %}
         </div>
         <div class="container" id="container_login">
@@ -145,6 +148,7 @@
                 <form action="{{ path('security_login') }}" method="POST">
                     <input type="text" placeholder="Votre Pseudo" name="_username" required>
                     <input type="password" placeholder="Votre Mot De Passe" name="_password" required>
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                     <input type="submit" name="submit" value="Se connecter">
                 </form>
                 

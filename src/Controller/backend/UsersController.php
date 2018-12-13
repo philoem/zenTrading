@@ -20,6 +20,8 @@ class UsersController extends AbstractController
      */
     public function index(UsersRepository $usersRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN', null, 'User tried to access a page without having authorisation');
+        
         return $this->render('admin/users/index.html.twig', ['users' => $usersRepository->findAll()]);
     }
 
@@ -28,6 +30,8 @@ class UsersController extends AbstractController
      */
     public function new(Request $request): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN', null, 'User tried to access a page without having authorisation');
+        
         $user = new Users();
         $form = $this->createForm(UsersType::class, $user);
         $form->handleRequest($request);
@@ -51,6 +55,8 @@ class UsersController extends AbstractController
      */
     public function show(Users $user): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN', null, 'User tried to access a page without having authorisation');
+        
         return $this->render('admin/users/show.html.twig', ['user' => $user]);
     }
 
@@ -59,6 +65,8 @@ class UsersController extends AbstractController
      */
     public function edit(Request $request, Users $user): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN', null, 'User tried to access a page without having authorisation');
+        
         $form = $this->createForm(UsersType::class, $user);
         $form->handleRequest($request);
 
@@ -79,6 +87,8 @@ class UsersController extends AbstractController
      */
     public function delete(Request $request, Users $user): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN', null, 'User tried to access a page without having authorisation');
+        
         if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($user);

@@ -18,7 +18,7 @@
         
         <div class="masthead">
             {% if app.user %}
-            <h3 class="text-muted">{{ app.user.username }}</h3>
+            <h3 class="text-muted">"{{ app.user.username|capitalize }}"</h3>
             {% endif %}
             <nav id="nav_blog">
               <ul class="nav nav-justified">
@@ -38,11 +38,7 @@
           <div class="jumbotron">
             <h1>Marketing stuff!</h1>
             <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
-            {% for users in user %}
-
-            {{ users.name}}
-
-            {% endfor %}
+            
             <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
           </div>
     

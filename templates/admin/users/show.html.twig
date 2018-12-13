@@ -39,14 +39,6 @@
                 <td>{{ user.locations }}</td>
             </tr>
             <tr>
-                <th>Password</th>
-                <td>{{ user.password }}</td>
-            </tr>
-            <tr>
-                <th>Salt</th>
-                <td>{{ user.salt }}</td>
-            </tr>
-            <tr>
                 <th>Roles</th>
                 <td>{{ user.roles ? user.roles|join(', ') : '' }}</td>
             </tr>
@@ -61,6 +53,6 @@
 
     <a href="{{ path('users_edit', {'id': user.id}) }}">edit</a>
 
-    {{ include('users/_delete_form.html.twig') }}
+    {{ include('admin/users/_delete_form.html.twig') }}
 </div>
 {% endblock %}

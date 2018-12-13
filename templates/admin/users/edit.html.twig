@@ -13,10 +13,10 @@
     <h1>Formulaire de modification d'un membre étudiant</h1>
     <hr>
 
-    {{ include('users/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('admin/users/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href="{{ path('users_index') }}">back to list</a>
 
-    {{ include('users/_delete_form.html.twig') }}
+    {{ include('admin/users/_delete_form.html.twig') }}
 </div>
 {% endblock %}
